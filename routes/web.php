@@ -31,7 +31,9 @@ Route::get('patients/{patient}/status', [PatientController::class, 'status'])->n
 Route::get('relatives/{relative}/assignment', [RelativeController::class, 'assignment'])->name('relatives.assignment');
 Route::post('relatives/{relative}/assign', [RelativeController::class, 'assign'])->name('relatives.assign');
 
-Route::get('patients/medicalhistory/{patient}', [PatientController::class, 'medical_history'])->name('patients.medical_history');
+Route::get('patients/medical-history/{patient}', [MedicalHistoryController::class, 'show'])->name('medical-histories.show');
+Route::get('patients/vital-signs/{patient}', [VitalSignController::class, 'show'])->name('vital-signs.show');
+Route::get('patients/diagnostic/{patient}', [DiagnosticController::class, 'show'])->name('diagnostics.show');
 
 Route::middleware(['auth:sanctum','verified'])->get('/dashboard', function () {
     return view('dashboard');

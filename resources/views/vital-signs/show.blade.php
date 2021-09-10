@@ -4,25 +4,6 @@
 
     <table>
         <thead>
-            <h3>Historia Medica</h3>
-        </thead>
-        <tbody>
-            <tr><td>Historia Medica</td><td>{{ $medical_history->care_suggestion }}</td></tr>
-        </tbody>
-    </table>
-
-    <a href="{{ URL::previous() }}">Volver</a>
-    <a href="{{ route('patients.edit', $patient) }}">Editar Paciente</a>
-    {{-- <table>
-        <thead>
-            <h3>Diagnostico del Paciente</h3>
-        </thead>
-        <tbody>
-            <tr><td>Diagnostico</td><td>{{ $patient->diagnostic->name }} ({{ $patient->diagnostic->code }})</td></tr>
-        </tbody>
-    </table> --}}
-    {{-- <table>
-        <thead>
             <h3>Signos Vitales Actuales</h3>
         </thead>
         <tbody>
@@ -33,8 +14,8 @@
             <tr><td>Glisemia</td><td>{{ $vital_sign_actually->glysemia }}</td></tr>
             <tr><td>Fecha de Registro</td><td>{{ $vital_sign_actually->register_date}}</td></tr>
         </tbody>
-    </table> --}}
-    {{-- <h3>Signos Vitales</h3>
+    </table>
+    <h3>Signos Vitales</h3>
     <table>
         <thead>
             <tr>
@@ -57,6 +38,16 @@
                     <td>{{ $vital_sign->register_date }}</td>
                 </tr>
             @endforeach
+        </tbody>
+    </table>
+
+    <a href="{{ URL::previous() }}">Volver</a>
+    {{-- <table>
+        <thead>
+            <h3>Diagnostico del Paciente</h3>
+        </thead>
+        <tbody>
+            <tr><td>Diagnostico</td><td>{{ $patient->diagnostic->name }} ({{ $patient->diagnostic->code }})</td></tr>
         </tbody>
     </table> --}}
 </x-app-layout>

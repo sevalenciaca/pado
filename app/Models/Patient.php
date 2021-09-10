@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'document',
         'name',
@@ -22,10 +24,9 @@ class Patient extends Model
         'nurse_id'
     ];
 
-    use HasFactory;
 
     public function medical_history() {
-        return $this->hasOne(MedicalHistory::class);
+        return $this->belongsTo(MedicalHistory::class);
     }
 
     public function relative() {
